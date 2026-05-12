@@ -19,3 +19,14 @@ This URL is the same as the subscriber because both publisher and subscriber nee
 
 3. Running RabbitMQ as message broker
 ![RabbitMQ Running](rabbitmq-running.png)
+
+4. Sending and processing event
+
+When I ran the subscriber program, it connected to RabbitMQ and waited for messages from the user_created queue. 
+Then when I ran the publisher program, it sent five UserCreatedEventMessage events to the message broker. 
+The subscriber received those five events and printed each message in the console. 
+RabbitMQ also showed an active connection, channel, queue, and consumer, which means the message broker was running and connected to the subscriber. 
+This proves that the publisher and subscriber communicate indirectly through RabbitMQ instead of calling each other directly. 
+The event-driven flow worked because the publisher only sent events to the broker, while the subscriber consumed and processed them from the broker.
+
+![Sending and processing event](sending-event.png)
