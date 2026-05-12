@@ -30,3 +30,14 @@ This proves that the publisher and subscriber communicate indirectly through Rab
 The event-driven flow worked because the publisher only sent events to the broker, while the subscriber consumed and processed them from the broker.
 
 ![Sending and processing event](sending-event.png)
+
+5. Monitoring chart based on publisher
+
+After running the publisher program again, the RabbitMQ message rate chart showed a spike. 
+The spike appeared because the publisher sent five UserCreatedEventMessage events to RabbitMQ in one run. 
+RabbitMQ recorded this publishing activity in the message broker chart. 
+The subscriber was also connected, so the messages could be delivered and processed after being published. 
+This shows that the publisher does not send data directly to the subscriber, but sends events through RabbitMQ. 
+The chart proves that RabbitMQ can monitor message traffic between the publisher and subscriber.
+
+![Monitoring chart based on publisher](monitoring-chart.png)
