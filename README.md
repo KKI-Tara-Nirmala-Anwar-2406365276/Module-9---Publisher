@@ -16,3 +16,6 @@ The second guest is the password for that username.
 The localhost part means RabbitMQ is running on my own local computer. 
 The number 5672 is the default port used by RabbitMQ for AMQP connections. 
 This URL is the same as the subscriber because both publisher and subscriber need to connect to the same message broker.
+
+3. Running RabbitMQ as message broker
+![RabbitMQ Running](rabbitmq-running.png)
